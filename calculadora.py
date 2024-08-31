@@ -1,3 +1,4 @@
+
 def suma(a, b):
     """Función para sumar dos números."""
     return a + b
@@ -27,4 +28,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
