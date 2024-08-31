@@ -1,30 +1,32 @@
-
-def suma(a, b):
-    """Función para sumar dos números."""
-    return a + b
-
-def main():
+def suma():
     import re
 
     while True:
+        # Leer la entrada del usuario
         operacion = input("Introduce una operación (o 'c' para borrar, 'q' para salir): ").strip()
-
+        
+        # Manejar la opción de salir
         if operacion.lower() == 'q':
             print("Saliendo de la calculadora.")
             break
-
+        
+        # Manejar la opción de borrar
         if operacion.lower() == 'c':
             print("Operación borrada.")
             continue
 
+        # Intentar evaluar la operación
         try:
+            # Evaluar la operación, asegurándose de que la entrada sea segura
+            # Utilizamos eval con un filtro de seguridad simple
             if re.match(r'^[0-9+\-*/().\s]+$', operacion):
                 resultado = eval(operacion)
                 print(f"Resultado: {resultado}")
             else:
                 print("Entrada no válida. Por favor, introduce una operación matemática válida.")
+        
         except Exception as e:
             print(f"Error al calcular la operación: {e}")
 
-if __name__ == "__main__":
-    main()
+# Llamar a la funcion
+suma()
