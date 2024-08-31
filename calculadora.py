@@ -1,3 +1,4 @@
+
 import re
 
 def extraer_componentes(operacion):
@@ -15,6 +16,12 @@ factor1, operador, factor2 = extraer_componentes(op)
 def multiplicacion(a,b):
     return a*b
 
+def division(a, b):
+    if b != 0:
+        return a / b
+def resta(a, b):
+    return a - b
+
 def calcular_resultado(factor1, operador, factor2):
     # Convertir los factores a números enteros
     num1 = int(factor1)
@@ -27,6 +34,6 @@ def calcular_resultado(factor1, operador, factor2):
     elif operador == '*':
         return multiplicacion(num1, num2)
     elif operador == '/':
-        return dividcion(num1, num2)
+        return division(num1, num2)
     else:
         return "Operador no reconocido"
